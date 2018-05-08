@@ -15,21 +15,21 @@ class Component{
     variables: Object //Data passing into HTML to be parsed with {{}} statement
     partials: Array<String> //Partials to be loaded needed by your html, called into your html with {{>name_partial}}
   */
-  constructor(refHTML, urlExternalHTML, target, variables, partials){
+  constructor(refHTML, urlExternalHTML, target, variables, partials, afterRender){
     this._refHTML = refHTML;
     this._urlExternalHTML = urlExternalHTML;
     this._target = target;
     this._variables = variables;
     this._partials = partials;
     this._rendered = undefined;
-    this.init();
+    this.init(afterRender);
   }
 
   /*
     init()
     Check if is an external HTML, so will load your external HTML page
   */
-  init(){
+  init(afterRender){
     if(this._urlExternalHTML.length > 0){
         ajaxModule.getJSON({
             url: this._urlExternalHTML,
@@ -38,6 +38,7 @@ class Component{
           this._refHTML = res;
           this.loadHTML();
           this.renderHTML(res);
+          afterRender();
         })
     }
   }
@@ -60,7 +61,8 @@ class Component{
         this._variables,
         this._partials
     );
-    jQuery(this._target).append(this._rendered);
+    $(this._target).append(this._rendered);
+    
   }
 }
 

@@ -1,86 +1,42 @@
-body, html{
-    line-height: 2em;
-    font-size: 16px;
+html, body{
+    height: 100vh;
+    font-size: 14px;
+    line-height: 1.2em;
 }
 
-app-aside, rotuer-outlet{
-    max-height: 100vh;
-    min-height: 100vh;
+app-header, header{
+    height: 7vh;
+    max-height: 7vh;
+    z-index: 999;
+}
+
+header .material-icons{
+    font-size: 1.5em;
+}
+
+router-outlet{
+    height: 93vh;
+    max-height: 93vh;
     overflow: auto;
 }
 
-app-aside{
-    z-index: 9999;
-    box-shadow: 6px 1px 6px rgba(0,0,0,0.16), 6px 3px 6px rgba(0,0,0,0.23);
+#task1 table tr{
+    border-bottom: 2px solid #ccc;
 }
 
-app-aside ul li{
-    cursor: pointer;
-    font-weight: 100;
+#task1 table td, #task1 table th{
+    padding: .2em .5em;
+    border: 2px solid rgb(228, 228, 228);
 }
 
-table caption{
-    font-size: 1.5em;
+#task1 table td{
+    border-top: 0px !important;
 }
 
-app-aside ul li.active{
-    color: rgb(26, 26, 26);
-    font-weight: 900;
+#task1 table tr>td:first-of-type{
+    border-left: 0px;
 }
 
-table { 
-    border-spacing: 0px;
-    border-collapse: separate;
-    display: none;
-}
-
-thead th, tbody td{
-    text-align: left;
-    border-bottom: 2px solid #eee;
-    border-spacing: 0px;
-}
-
-tr{
-    background: white;
-}
-
-tbody td{
-    color: rgb(124, 124, 124);
-}
-
-#tableCounter tr, th{
-    cursor: pointer;
-}
-
-.activeCounter{
-    background: #eee !important;
-}
-
-.activeCounter td{
-    border-bottom: 2px solid rgb(205, 205, 205);
-}
-
-tbody tr:last-child td{
-    border: 0px;
-}
-
-.loadBtn{
-    background: linear-gradient(320deg, #004d91 0%, #0088ff 100%);;
-    position: fixed;
-    bottom: 2em;
-    right: 3em;
-    font-size: 1.5em;
-    border-radius: 50%;
-    border: 0px; 
-    z-index: 99;   
-}
-
-.p10l{
-    padding-left: 1.25em;
-    padding-right: .5em;
-}
-
-.p10r{
-    padding-right: 1.25em;
-    padding-left: .3em;
+#task1 table tr>td:last-of-type{
+    border-right: 0px;
 }

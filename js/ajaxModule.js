@@ -7,7 +7,7 @@ class ajaxModule{
   */
   static getJSON(options, callback){
     jQuery.ajax(options).then((res) => callback(res)).catch((e) => {
-      alert(`Attenzione, errore nella chiamata ajax. Dettagli: ${e.message}`);
+      alert(`Attenzione, errore nella chiamata ajax. Dettagli: ${e}`);
     })
   }
 }
