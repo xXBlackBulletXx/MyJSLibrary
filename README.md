@@ -48,6 +48,6 @@ $(document).ready(() => {
 
 ## Authors
 
-* **Antonio Russo** - *Initial work* - [PurpleBooth](https://github.com/xXBlackBulletXx)
+* **Antonio Russo** - *Initial work* - [xXBlackBulletXx](https://github.com/xXBlackBulletXx)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
